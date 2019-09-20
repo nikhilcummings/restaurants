@@ -1,0 +1,22 @@
+<h1>Let's eat</h1>
+<h3>reviews for {{restaurant.name}}:</h3>
+<button [routerLink]="['review']" class="btn btn-primary">New review</button>
+<div *ngIf="reviews">
+        <table class="table table-hover table-dark" style="max-width:900px">
+            <thead>
+              <tr>
+                <th scope="col" style="font-size:24px">Customer</th>
+                <th scope="col" style="font-size:24px">Rating</th>
+                <th scope="col" style="font-size:24px">Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let review of reviews">
+                <td scope="row">{{review.name}}</td>
+                <td>{{review.rating}}</td>
+                <td>{{review.comment}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <button [routerLink]="['/restaurants']" class="btn btn-primary">Back</button>
+</div>

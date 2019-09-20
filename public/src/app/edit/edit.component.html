@@ -1,0 +1,7 @@
+<h1>Updating {{restaurant.name}}</h1>
+<form (submit)="updateRestaurant(restaurant._id)">
+        <input placeholder="name..." name="restaurant.name" [(ngModel)]="restaurant.name">
+        <input placeholder="cuisine..." name="restaurant.cuisine" [(ngModel)]="restaurant.cuisine">
+        <button type="submit" class="btn btn-primary">Update</button>
+</form>
+<button [routerLink]="['/restaurants']" class="btn btn-primary">Cancel</button>

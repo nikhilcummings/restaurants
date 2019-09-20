@@ -1,0 +1,11 @@
+<h1>Let's eat</h1>
+<h3>Write a review for {{review.name}}</h3>
+<form (submit)="createReview()">
+        <p style="color:red">{{err.name}}</p>
+        <input placeholder="name..." name="review.name" [(ngModel)]="review.name" style="display:block">
+        <p style="color:red">{{err.rating}}</p>
+        <input placeholder="rating..." name="review.rating" [(ngModel)]="review.rating" style="display:block">
+        <p style="color:red">{{err.comment}}</p>
+        <input placeholder="comments..." name="review.comment" [(ngModel)]="review.comment" style="display:block">      
+        <button type="submit" style="display:block">Submit!</button>
+</form>

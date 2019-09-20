@@ -1,0 +1,9 @@
+<h1>Add a restaurant</h1>
+<form (submit)="createRestaurant()">
+    <p style="color:red">{{err.name}}</p>
+    <input placeholder="name..." name="restaurant.name" [(ngModel)]="restaurant.name" style="display:block">
+    <p style="color:red">{{err.cuisine}}</p>
+    <input placeholder="cuisine..." name="restaurant.cuisine" [(ngModel)]="restaurant.cuisine" style="display:block">
+    <button type="submit" class="btn btn-primary" style="display:block">Add</button>
+</form>
+<button [routerLink]="['/restaurants']" class="btn btn-primary">Back</button>

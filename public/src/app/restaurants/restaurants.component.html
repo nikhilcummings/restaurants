@@ -1,0 +1,25 @@
+<h1>Let's eat</h1>
+<button [routerLink]="['/newrestaurant']" class="btn btn-primary">New restaurant</button>
+<h1>Restaurants: </h1>
+<div *ngIf="restaurants">
+    <table class="table table-hover table-dark" style="max-width:900px">
+        <thead>
+          <tr>
+            <th scope="col" style="font-size:24px">Restaurant</th>
+            <th scope="col" style="font-size:24px">Cuisine</th>
+            <th scope="col" style="font-size:24px">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let restaurant of restaurants">
+            <td scope="row">{{restaurant.name}}</td>
+            <td>{{restaurant.cuisine}}</td>
+            <td><button [routerLink]="[restaurant._id, 'reviews']" class="btn btn-primary" style="margin-right:10px">Read reviews</button><button [routerLink]="[restaurant._id, 'edit']" class="btn btn-primary" style="margin-right:10px">Update</button><button *ngIf="restaurant.canDelete == true" (click)="deleteRestaurant(restaurant._id)" class="btn btn-primary">Delete</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+<div *ngIf="updating == true">
+    <app-edit></app-edit>
+</div>
+<router-outlet></router-outlet>
